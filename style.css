@@ -1,0 +1,238 @@
+/* ========================
+   Web NES Player - Styling
+   ======================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+/* Emulator Box */
+.emulator-box {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+}
+
+/* Game Screen (Canvas) */
+#game-screen {
+    display: block;
+    width: 100%;
+    max-width: 512px;
+    height: auto;
+    background: black;
+    border: 5px solid #333;
+    border-radius: 10px;
+    margin: 0 auto 20px;
+    image-rendering: pixelated; /* Makes pixel art look crisp */
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* File Upload Button */
+.file-label {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: inline-block;
+}
+
+.file-label:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.file-label:active {
+    transform: translateY(0);
+}
+
+/* Game Control Buttons */
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.2s;
+}
+
+.btn-play {
+    background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+    color: #333;
+}
+
+.btn-play:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(132, 250, 176, 0.4);
+}
+
+.btn-pause {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    color: #333;
+}
+
+.btn-pause:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(250, 112, 154, 0.4);
+}
+
+.btn-reset {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    color: #333;
+}
+
+.btn-reset:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(168, 237, 234, 0.4);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Status Message */
+.status {
+    text-align: center;
+    padding: 15px;
+    background: #f0f0f0;
+    border-radius: 8px;
+    color: #666;
+    font-weight: bold;
+    font-size: 0.95em;
+}
+
+.status.loading {
+    color: #667eea;
+}
+
+.status.success {
+    color: #27ae60;
+    background: #d4edda;
+}
+
+.status.error {
+    color: #e74c3c;
+    background: #f8d7da;
+}
+
+/* Instructions */
+.instructions {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.instructions h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.instructions table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.instructions table tr {
+    border-bottom: 1px solid #eee;
+}
+
+.instructions table tr:last-child {
+    border-bottom: none;
+}
+
+.instructions table td {
+    padding: 12px;
+    text-align: left;
+}
+
+.instructions table td:first-child {
+    font-weight: bold;
+    color: #667eea;
+    width: 30%;
+}
+
+.instructions table td:last-child {
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .emulator-box {
+        padding: 20px;
+    }
+
+    .btn {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+
+    .instructions {
+        padding: 20px;
+    }
+
+    .instructions table td {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}

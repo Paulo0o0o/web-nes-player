@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web NES Player 🎮</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 Web NES Player</h1>
+        <p class="subtitle">Play classic NES games in your browser!</p>
+        
+        <div class="emulator-box">
+            <!-- Game Screen -->
+            <canvas id="game-screen" width="256" height="240"></canvas>
+            
+            <!-- Controls -->
+            <div class="controls">
+                <div class="button-group">
+                    <label for="rom-input" class="file-label">📁 Upload NES ROM (.nes)</label>
+                    <input 
+                        type="file" 
+                        id="rom-input" 
+                        accept=".nes" 
+                        style="display: none;"
+                    >
+                </div>
+                
+                <div class="button-group">
+                    <button id="play-btn" class="btn btn-play">▶ Play</button>
+                    <button id="pause-btn" class="btn btn-pause">⏸ Pause</button>
+                    <button id="reset-btn" class="btn btn-reset">🔄 Reset</button>
+                </div>
+                
+                <div id="status" class="status">
+                    Ready to play! Upload a ROM to start.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Instructions -->
+        <div class="instructions">
+            <h2>⌨️ Keyboard Controls</h2>
+            <table>
+                <tr>
+                    <td><strong>Arrow Keys</strong></td>
+                    <td>Move (D-Pad)</td>
+                </tr>
+                <tr>
+                    <td><strong>Z</strong></td>
+                    <td>A Button</td>
+                </tr>
+                <tr>
+                    <td><strong>X</strong></td>
+                    <td>B Button</td>
+                </tr>
+                <tr>
+                    <td><strong>Enter</strong></td>
+                    <td>Start</td>
+                </tr>
+                <tr>
+                    <td><strong>Shift</strong></td>
+                    <td>Select</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Load the JSNES library from CDN -->
+    <script src="https://www.jsnes.org/dist/jsnes.min.js"></script>
+    
+    <!-- Our emulator code -->
+    <script src="app.js"></script>
+</body>
+</html>
